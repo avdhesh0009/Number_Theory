@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// Time complexity of GCD O(log(N))
+// Time complexity of GCD O(log(max(a,b)))
 // 1<=a,b<=10^9
 int gcd(int a,int b){
     if(b==0) return a;
