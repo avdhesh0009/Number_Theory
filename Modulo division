@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+// modulo inverse of division
+const int m=5;
+int gcd(int a,int b,int &x,int &y){
+    if(b==0){
+        x=1;
+        y=0;
+        return a;
+    }
+    int x1,y1;
+    int d=gcd(b,a%b,x1,y1);
+    x=y1;
+    y=x1-y1*(a/b);
+    return d;
+}
+void solve(){
+    int a,b,x=0,y=0;
+    cin>>a>>b;
+    int g=gcd(b,m,x,y);
+    if(g==1){
+       x=((x%m)+m)%m;
+       b=(b*x)%m;
+       cout<<((a%m)*(b%m))%m<<endl;
+    }
+    else{
+        cout<<"Solution does'nt exist "<<endl;
+    }
+}
+int main(){
+    int t=1;
+    // cin>>t;
+    for(int i=1;i<=t;i++){
+        solve();
+    }
+   return 0;
+}
